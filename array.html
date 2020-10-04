@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    const array = ["dog", "cat", "moose", "cat", "bird", "moose", "dog", "cat", "dog", "cat"]
+    const array2 = ["a", "b", "c", "a", "d", "a", "a", "d"]
+
+  const mostCommon = (array) => {  const wordMapper = {};
+    for (const word of array) {
+      if (!(word in wordMapper)) { wordMapper[word] = 1 } 
+      else {wordMapper[word]++ }}
+      console.log(wordMapper);
+    
+    let greatestValue = 0; 
+    let count;
+    
+    for (let x in wordMapper) {
+      // console.log(wordMapper.x);
+      if (wordMapper[x] > greatestValue) {
+        greatestValue = wordMapper[x]
+        count = x;
+        }}
+        return count
+        /*** {
+          * dog: 3,
+          * cat: 4,
+          * moose: 2,
+          * bird: 1,
+          * } **/
+          } 
+          console.log(mostCommon(array2));
+  </script>
+  
+</body>
+</html>

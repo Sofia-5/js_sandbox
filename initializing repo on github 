@@ -1,0 +1,10 @@
+// initialize repo in git
+1. git init 
+// link the github repo to your local folder 
+2. git remote add origin (copied URL from git)
+// do the usual trio 
+3. git add -A 
+4. git commit -m " blah" 
+5. git push origin master 
+
+/// you should see the pushes on github 

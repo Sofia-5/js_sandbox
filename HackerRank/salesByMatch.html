@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script> 
+  n = 7; 
+  ar = [1,2,1,2,1,3,2];
+
+// Complete the sockMerchant function below.
+function sockMerchant(n, ar) {
+
+  // pairCounter = 0
+  // create a copy of the array 
+  // Iterate thorough each element in the first array 
+  // comparing the element with all the other elements 
+  // if there is a match, increment the counter by one 
+  // if match, remove matched elements from the copied array
+  // if there is no match, continue looping 
+  // return the pairedcounter 
+
+  let pairedCounter = 0 
+
+
+  // for(let i = 0; i < ar.length; i++) {
+  //   console.log(ar.filter(ar[i]).length);
+  // }
+
+  let numberOfpairs = {}, val;
+  for (let i=0; i < ar.length; ++i) {
+    val = ar[i];
+    if (numberOfpairs[val]) {
+        ++numberOfpairs[val];
+    } else {
+        numberOfpairs[val] = 1;
+    }
+  }
+  console.log(numberOfpairs)
+}
+
+// calling the function
+sockMerchant(n, ar);
+
+</script> 
+</body>
+</html>
+
+

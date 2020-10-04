@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SumTwo</title>
+</head>
+<body>
+  
+
+
+
+<script> 
+
+// nums = [2,7,11,15], target = 18
+// 1. use a for loop to iterate through the array to add the indices values together 
+// put the sums into a new empty array 
+// filter through the new array of sums to determine which is the sum of 18 
+// 
+// target indices 1 and 2 to get sum of 18 
+// use dot notation to get the targeted indices 
+
+// Sums
+// 2+2, 2+7, 2+11, 2+15
+// 7+2, 7+7, 7+11, 7+15 
+// 11+2, 11+7, 11+11, 11+15 
+// 15+2, 15+7, 15+11, 15+15 
+
+// Issues (we want to remove)
+// Duplicate (same values)
+// Adding itself 
+// Extra Sums 
+
+// when outputArray equals to 18, stop the loop 
+
+// let nums = [2,7,11,15];
+// let target = 18;
+
+let nums = [2,7,11,15];
+let target = 18;
+
+let sums = [];
+let outputArray = [];
+
+// Should stay within 2 for loops --> i to k 
+let twoSum = function(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = 0; j < nums.length; j++) {
+        if (i !==  j) {
+          let sums = nums[i] + nums[j]; 
+          if (sums === target) {
+            outputArray.push([i, j]);
+            return outputArray; 
+          }
+        }   
+      }
+    }
+    // == comparing two values (can be of different types)
+    // === comparing two values and same type 
+};
+// twoSum(nums, target);
+console.log(twoSum(nums, target));
+</script> 
+</body>
+</html>
+
