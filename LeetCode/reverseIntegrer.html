@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Integer</title>
+</head>
+<body>
+  <script>
+    
+    // create a variable with numbers as the type // 56789 // asign it the value of the input 
+    // create a error handling function to give an output of 0 when it is a larger number than 32-bit 
+    // if it is less than 32-bit then run this function to reverse the number 
+        // convert the number into a string --> "56789"
+        // in order to maniuplate each character in the string, we need to first expand/separate "spread" it from eachother "5 6 7 8 9" --> array 
+        // use a for loop method to reverse the expanded string characters 
+        // 
+        // then convert the string back into a number  
+    // use return to provide the output 
+
+    // 56789 --> number 
+    // "56789" --> string 
+    // "5 6 7 8 9"  --> spread the string 
+    // ["9, 8, 7, 6, 5"] --> reversed it into an array
+    // "98765" --> converted back into a string 
+    // 98765 --> converted back to a number 
+
+    // -56789 --> number 
+    // "56789" --> string 
+    // "-" "5" "6" "7" "8" "9"  --> spread the string 
+    // ["9, 8, 7, 6, 5, -"] --> reversed it into an array
+    // "98765-" --> converted back into a string 
+    // 98765- --> converted back to a number 
+
+    let x = 123;
+
+    let negativeNum = false; 
+    // 
+    let reverse = function(x) {
+      // error handling for if negative number 
+      if (x < 0) {
+        negativeNum = true;
+        x = x * -1; 
+        console.log(negativeNum)
+      }
+        //convert number to string
+        let convertedNums = x.toString();
+        // spread string
+        let spreadNums = [...convertedNums]; 
+        // console.log(spreadNums); // 
+        // iterate through the array starting at the end of the array and move to the front of the array // [5 6 7 8 9]
+        let outputArray = [];
+        for (let i = spreadNums.length - 1; i >= 0; i--) {
+          outputArray.push(spreadNums[i]);
+          // console.log(outputArray);
+          
+        }
+        // convert the array into a string 
+        let arrayStr = outputArray.join('');
+        // console.log(arrayStr);
+        // convert the string into a number 
+        let convertedStr = parseInt(arrayStr);
+          // check if the converted number was a negative number, if so, change it back to negative. If not negative, keep checking and see if it is an integer that is larger than 32 bit , if so, return 0. if not return the convertedStr. 
+          // console.log(convertedStr)
+          // 123 
+          // -123 
+          // 12345678999
+          // -12345678999
+          if (convertedStr > Math.pow(2, 31) || convertedStr < Math.pow(2, 31) * -1){
+          return 0
+          }
+          if (negativeNum) {
+            convertedStr = convertedStr * -1; 
+          return convertedStr
+          } else {
+            return convertedStr;
+          }
+    }
+
+    reverse(x);
+          console.log(reverse(x));
+
+
+  </script>
+</body>
+</html>

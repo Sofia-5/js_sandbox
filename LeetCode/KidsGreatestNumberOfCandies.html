@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids with the Greatest Number of Candies</title>
+</head>
+<body>
+  <script>
+
+    // candies = [2,3,5,1,3], extraCandies = 3
+    // Output: [true,true,true,false,true] 
+
+    // Using the candies array, we want to iterate through, adding extraCandies to the value and push it into a new array 
+    // The new array will display true if the sum of the value plus the extraCandies, is the greatest value of the array, if not then show false
+
+    let candies = [4,2,1,1,2];
+    let extraCandies = 1;
+
+    let kidsWithCandies = function(candies, extraCandies) {
+      let greatestNumber = []; 
+      let trueOrFalse = []; 
+      greatestNumber = (Math.max.apply(null, candies))
+
+      for (let i = 0; i < candies.length; i++) {
+        if (extraCandies + candies[i] >= greatestNumber) {
+          trueOrFalse.push(true);
+        } else {
+          trueOrFalse.push(false);
+        }
+      }
+        return trueOrFalse;
+    };
+  console.log(kidsWithCandies(candies, extraCandies)); 
+
+  </script>
+</body>
+</html>
