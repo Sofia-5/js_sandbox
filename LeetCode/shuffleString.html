@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuffle String</title>
+</head>
+<body>
+  <script>
+
+    // 1. Take the string stored in the variable and spread it so that we can maniputlate it 
+    // 2. Take this new spreaded spring (array) and shuffle it according to the array of indices specified 
+    // 3. The shuffled array will be pushed into a new array 
+    // convert the array into a string 
+
+    let s = "aiohn", indices = [3,1,4,2,0]
+  
+    let restoreString = function(s, indices) {
+    let spreadWord = [...s]
+    // ['a' 'r' 't']
+    // [1,0,2]
+    let outputArray = []; 
+    // outputArray[1] = "a";
+    // outputArray[0] = "r"; 
+    // outputArray[2] = "t"; 
+    //   console.log(outputArray)
+    for (i = 0; i < spreadWord.length; i++) {
+      outputArray[indices[i]] = spreadWord[i];
+    }
+      let combinedArray = outputArray.join('');
+      return combinedArray;
+  };
+  // restoreString(s, indices);
+    console.log(restoreString(s, indices))
+  </script>
+</body>
+</html>
