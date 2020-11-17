@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Longest Common Prefix</title>
+</head>
+<body>
+  <script>
+
+    //Input: 
+    strs = ["flower","flow","flight"]
+    // strs = ["dog","racecar","car"]
+    // Output: "fl"
+
+    // NOTES //
+    // Iterate through the array and spread each string
+        // ["f","l","o","w","e","r"],["f","l","o","w"],["f","l","i","g","h","t"]
+    // push the spread strings into a new array 
+    // iterate through the new array to compare the spread letters with each other
+    // If the same, then return the letter(s) that all elements share in common
+    // If not the same return an empty string 
+
+    // ["f","l","o","w","e","r"],
+    // ["f","l","o","w"],
+    // ["f","l","i","g","h","t"]
+
+    let longestCommonPrefix = function(strs) {
+      let output = "";
+      let newArray = strs.map((val) => [...val])
+      
+      if (newArray.length === 0) {
+        return output; 
+      }
+      
+      if (newArray.length == 1) {
+        return strs[0];
+      }
+
+      for (let i = 0; i < newArray[0].length; i++) {
+        // ["f","l","o","w","e","r"],
+        // ["f","l","o","w"],
+        // ["f","l","i","g","h","t"]
+      
+        for (let j = 1; j < newArray.length; j++) {
+        // ["f","l","o","w","e","r"],
+        // ["f","l","o","w"],
+        // ["f","l","i","g","h","t"]
+          if (newArray[j][i] !== newArray[0][i]) {
+            return output;
+            } 
+          }
+        output = output + newArray[0][i];
+      }
+      return output;
+    };
+    console.log(longestCommonPrefix(strs));
+      
+
+
+  </script>
+</body>
+</html>

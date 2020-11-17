@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balanced Strings</title>
+</head>
+<body>
+  <script>
+
+  //Input: 
+  s = "RLLLLRRRLR"
+  // Output: 2
+
+  // In order to manipulate the string, we first need to spread it into an array
+  // Iterate through the array to increment number of Rs and the number of Ls in the array 
+  // Once one of the letters becomes equal to each other, increment the counter by 1
+  // continue to iterate through the array until the total length of the array
+  // return the number of split arrays (counter) 
+  
+  let matchedLetter = []; 
+  let balancedStringSplit = function(s) {
+    spreadS = [...s]
+  let counter = 0; 
+  let rCounter = 0; 
+  let lCounter = 0; 
+    for (i = 0; i < spreadS.length; i++) {
+      if (spreadS[i] == 'R') {
+        rCounter = rCounter + 1;
+        } 
+      if (spreadS[i] == 'L') {
+        lCounter = lCounter + 1;
+      }
+      if (rCounter == lCounter) {
+        counter = counter + 1; 
+      }
+      }
+        console.log(counter);
+        return counter;
+    };
+
+    balancedStringSplit(s); 
+
+
+    // Imperative programming (for loop) - direct
+    // functional programming (.map, .filter, ) 
+        // pure functions - input and outputs , expect same outputs 
+        // impure functions - side effects , example with counter 
+    // declarative programming (React - compenent) - listening for something 
+
+  </script>
+</body>
+</html>

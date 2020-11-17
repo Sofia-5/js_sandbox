@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Input: 
+    // Output: 4
+    
+    let solution = function() {
+      let n = [0, 1, 2, 3, 4, 5]
+      let bad = [false, false, false, false, true, true]
+      let output
+      /**
+       * @param {integer} n Total versions
+       * @return {integer} The first bad version
+       */
+      for (let i = 5; i > 0; i--) {
+         // 5 = true 
+         // 4 = true 
+         // 3 = false 
+         // 2 = false 
+         // 1 = false 
+         // 0 = false 
+        if (bad[i] === false) {
+          return n[i + 1];
+        }
+      
+      }        
+      // return function(n) {
+        
+      };
+     console.log(solution());
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Bad Version</title>
+</head>
+<body>
+  <script>
+
+// create a for loop to filter the versions starting at the latest version going backwards 
+// if false, return the version of latest version of true. 
+
+
+// Input: 
+let n = [0, 1, 2, 3, 4, 5]
+let bad = 4
+// Output: 4
+
+let solution = function() {
+  let output = []; 
+      /**
+       * @param {integer} n Total versions
+       * @return {integer} The first bad version
+       */
+       for (let i = 5; i > 0; i--) {
+         // 5 = true 
+         // 4 = true 
+         // 3 = false 
+         // 2 = false 
+         // 1 = false 
+         // 0 = false 
+         if (isBadVersion(i) === false) {
+          output.push[i]
+          return i;
+         }
+        
+        console.log(i)
+       }        
+      
+      
+      // return function(n) {
+          
+
+      };
+      solution()
+    
+
+  </script>
+</body>
+</html>
