@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Filter Reduce Explaination</title>
+</head>
+<body>
+  <script>
+
+
+let num = [1, 2, 3, 4, 5];
+//map
+let blahMap = num.map((val) => val * 2);
+//filter
+let blahFilter = num.filter((val) => val > 3);
+//reduce
+let blahReduce = num.reduce((acc, val) => acc - val);
+console.log(blahReduce);
+
+
+// function doubling(num, numOfTimes) {
+//  let blah;
+//  for (let i = 0; i < numOfTimes; i++) {
+//      blah = num.map((val) => val * 2);
+//      console.log(blah);
+//  }
+//  return blah;
+// }
+// console.log(doubling(num, 4));
+
+  </script>
+  
+</body>
+</html>

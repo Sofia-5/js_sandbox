@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count the Number of Consistent Strings</title>
+</head>
+<body>
+  <script>
+
+// You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent if all characters in the string appear in the string allowed.
+// Return the number of consistent strings in the array words.
+
+// Input: 
+// allowed = "ab"
+// words = ["ad","bd","aaab","baa","badab"]
+// Output: 2
+// Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+
+// spread allowed string
+// spread the words array and then spread it again so that it is the same level of spread as allowed array (individual characters)
+// Look at the spread words array (spread) and iterate through each value to compare it with the value of index 0 of allowed array
+// if any value in the spread array does not match to the values in allowed array, do nothing 
+// if match then increase counter by 1
+
+
+
+// which combination of letters in the words array have the letters found in the allowed array. 
+// return all the elements with consisting of the letters from allowed array 
+
+
+
+// Notes 
+// spread the allowed string in order to use each character separately
+// a,b 
+// spread the words array in order to use each character of each element 
+// a, d, b, d, a, a, a, b
+// iterate through the spreadWords array to spread each element into individual characters 
+
+// iterate through the spreaded words array (spread) 
+// filter the spread array to see if it does not match with spreadAllowed array 
+// ad, bd, aaab
+// if not a match, return all the words that contain the match.
+// aaab
+
+
+
+allowed = "ab"
+words = ["ad","bd","aaab","baa","badab"]
+
+let countConsistentStrings = function(allowed, words) {
+  let spreadAllowed = [...allowed];
+  console.log("spread Allowed" + " " + spreadAllowed)
+  
+  let spreadWords = [...words];
+  console.log("spread Words" + " " + spreadWords)
+  
+  for (let i = 0; i < spreadWords.length; i++) {
+    let spread = [...spreadWords[i]];
+    let counter = 0;
+    console.log("spread" + " " + spread)
+
+    for (let j = 0; j < spread.length; j++) {
+    let output = spread.filter((val) => val !== spreadAllowed[j])
+    if (spread === spreadAllowed) {
+      counter = counter + 1
+    }
+    return counter
+    console.log(counter)
+    }
+  }
+}
+
+  
+  countConsistentStrings(allowed,words)
+
+  </script>
+</body>
+</html>

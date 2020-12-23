@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destination City </title>
+</head>
+<body>
+
+  <script>
+// Input: 
+let paths = [
+  ["London","New York"],
+  ["New York","Lima"],
+  ["Lima","Sao Paulo"]
+  ];
+// Output: "Sao Paulo" 
+// Explanation: Starting at "London" city you will reach "Sao Paulo" city which is the destination city. Your trip consist of: "London" -> "New York" -> "Lima" -> "Sao Paulo".
+
+//loop through paths
+//extract the destination ([1])
+//is the destination also an outgoing city?
+//if no, then return destination[i]
+//if yes, then continue the loop
+
+let destCity = function(paths) {
+  let sourceCities = paths.map((val) => val[0])
+  //[london, NY, lima]
+  let destinationCities = paths.map((val) => val[1])
+  // [NY, Lima, SP]
+
+  //option 1
+  for (let i = 0; i < destinationCities.length; i++) {
+        //ny, lima, sp
+        let output = sourceCities.filter((val) => val === destinationCities[i]);
+        if (output.length === 0) {
+            return destinationCities[i];
+        } 
+    }
+    //option 2
+    // for (let i = 0; i < paths.length; i++) {
+    //  //ny, lima, sp
+    //  console.log(paths[i][1] + " " + sourceCities.indexOf(paths[i][1]));
+    //  if (sourceCities.indexOf(paths[i][1]) === -1) {
+    //      return paths[i][1];
+    //  }
+    // }
+};
+console.log(destCity(paths));
+destCity(paths);
+
+  </script>
+  
+</body>
+</html>

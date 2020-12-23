@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Numbers with Even Number of Digits </title>
+</head>
+<body>
+
+  <script>  
+  // Given an array nums of integers, return how many of them contain an even number of digits.
+
+  // Example 1:
+
+  nums = [12,345,2,6,7896];
+  // Output: 2
+  // Explanation: 
+  // 12 contains 2 digits (even number of digits). 
+  // 345 contains 3 digits (odd number of digits). 
+  // 2 contains 1 digit (odd number of digits). 
+  // 6 contains 1 digit (odd number of digits). 
+  // 7896 contains 4 digits (even number of digits). 
+  // Therefore only 12 and 7896 contain an even number of digits.
+
+
+  //Thinking process//
+  // 1. Create a counter, which will be keeping count of how many numbers have a even number of digits. 
+  // 2. Using a for loop, Iterate through the nums array 
+  // 3. Convert the numbers to a string in order to get the length of each value in the array.
+  // 4. Use the length method to find the length of each number in the nums array and push it to a new array (numberOfDigits)
+  // 5. Iterate through the new numberOfDigits array and use the remainder method to check if it is an even number or not. 
+  // 6. If even, then increment the counter. 
+  // 7. Convert string back to a number 
+
+  let findNumbers = function(nums) {
+        
+    let counter = 0; 
+    let numberOfDigits = [];
+
+    for (let i = 0; i < nums.length; i++) {
+      numberOfDigits.push(nums[i].toString().length);
+    }
+      console.log(numberOfDigits);
+
+    for (let i = 0; i < numberOfDigits.length; i++) {
+      if (numberOfDigits[i] % 2 == 0) {
+        counter = counter + 1
+      } 
+    }
+    console.log(counter)
+    return parseInt(counter);
+    
+
+  };
+  findNumbers(nums);
+
+
+  </script>
+  
+</body>
+</html>
