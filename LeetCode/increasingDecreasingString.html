@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Increasing Decreasing String</title>
+</head>
+<body>
+  <script>
+
+    //The problem
+//Given a string s. You should re-order the string using the following algorithm:
+
+// Pick the smallest character from s and append it to the result.
+// Pick the smallest character from s which is greater than the last appended character to the result and append it.
+// Repeat step 2 until you cannot pick more characters.
+// Pick the largest character from s and append it to the result.
+// Pick the largest character from s which is smaller than the last appended character to the result and append it.
+// Repeat step 5 until you cannot pick more characters.
+// Repeat the steps from 1 to 6 until you pick all characters from s.
+// In each step, If the smallest or the largest character appears more than once you can choose any occurrence and append it to the result.
+// Return the result string after sorting s with this algorithm.
+
+// Example 1:
+// Input: s = "aaaabbbbcccc"
+// Output: "abccbaabccba"
+// Explanation: After steps 1, 2 and 3 of the first iteration, result = "abc"
+// After steps 4, 5 and 6 of the first iteration, result = "abccba"
+// First iteration is done. Now s = "aabbcc" and we go back to step 1
+// After steps 1, 2 and 3 of the second iteration, result = "abccbaabc"
+// After steps 4, 5 and 6 of the second iteration, result = "abccbaabccba"
+
+//STEPS: 
+//1. Iterate through the array and sort the letters from smallest to greatest, but without duplicates. 
+//2. Store the unique acending sorted letters in a variable.
+//3. Iterate through the array again and sort the letters from largest to smallest, but without duplicates. 
+// descending order
+animals.sort(function (a, b) {
+    if (a > b) {
+        return -1;
+    }
+    if (b > a) {
+        return 1;
+    }
+    return 0;
+});
+console.log(animals);
+// ["elephant", "dog", "cat", "bee", "ant"]
+
+
+
+
+
+  </script>
+</body>
+</html>
